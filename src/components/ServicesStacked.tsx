@@ -2,7 +2,6 @@
 
 import { BentoCard } from './grid/BentoCard';
 import LatticeBg from './LatticeBg';
-import SectionBackground from './SectionBackground';
 
 export default function ServicesStacked() {
     return (

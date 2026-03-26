@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef, FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
-import SectionBackground from './SectionBackground';
 
 // ── Islamic Lattice SVG background ───────────────────────────────────────────
 function LatticeBg() {
@@ -134,7 +133,7 @@ export default function SContact() {
                     className="text-[10px] tracking-[0.5em] uppercase mb-3"
                     style={{ color: '#D4AF37', opacity: 0.6 }}
                 >
-                    تواصل معنا · Let's Connect
+                    تواصل معنا · Let&apos;s Connect
                 </p>
                 <h2
                     className="text-4xl md:text-6xl font-bold"
@@ -239,7 +238,7 @@ export default function SContact() {
                                 Jazakallahu Khayran
                             </h3>
                             <p className="text-sm" style={{ color: 'rgba(0,0,0,0.45)' }}>
-                                Your message was received. We shall return with excellence, insha'Allah.
+                                Your message was received. We shall return with excellence, insha&apos;Allah.
                             </p>
                         </div>
                     ) : (

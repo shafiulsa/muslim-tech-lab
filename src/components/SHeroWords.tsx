@@ -21,7 +21,6 @@ const WORDS = [
 
 const CURTAIN_LIFT_MS = 1600;   // when PageCurtain has fully opened
 const WORD_DURATION_MS = 600;   // each word visible for
-const TOTAL_INTRO_MS = CURTAIN_LIFT_MS + WORDS.length * WORD_DURATION_MS + 400; // +400 final hold
 
 export default function SHeroWords({ onComplete }: { onComplete?: () => void }) {
     const [phase, setPhase] = useState<'hidden' | 'words' | 'done'>('hidden');

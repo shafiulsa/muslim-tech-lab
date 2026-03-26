@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import SectionBackground from './SectionBackground';
 import LatticeBg from './LatticeBg';
 
 const FAQ_DATA = [

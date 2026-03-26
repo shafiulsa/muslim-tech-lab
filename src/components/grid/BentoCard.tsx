@@ -7,11 +7,10 @@ interface BentoCardProps {
     description: string;
     className?: string;
     children?: ReactNode;
-    icon?: ReactNode;
     tag?: string;
 }
 
-export function BentoCard({ title, description, className = "", children, icon, tag }: BentoCardProps) {
+export function BentoCard({ title, description, className = "", children, tag }: BentoCardProps) {
     return (
         <div className={`group relative overflow-hidden rounded-[2.5rem] bg-[#ece9e4] p-8 transition-all duration-500 hover:bg-[#e4e1db] ring-1 ring-black/5 hover:ring-black/10 ${className}`}>
             {/* Background Glow */}

@@ -45,7 +45,7 @@ export default function BentoGallery() {
 
         gsap.set(galleryItems, { clearProps: "all" });
 
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             galleryElement.classList.add("gallery--final");
             const flipState = Flip.getState(galleryItems);
             galleryElement.classList.remove("gallery--final");

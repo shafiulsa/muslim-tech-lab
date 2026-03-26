@@ -55,13 +55,14 @@ export default function PremiumPortfolio() {
 
             // Parallax effect for each project image
             const cards = gsap.utils.toArray(".portfolio-card");
-            cards.forEach((card: any) => {
-                const img = card.querySelector("img");
+            cards.forEach((card) => {
+                const element = card as HTMLElement;
+                const img = element.querySelector("img");
                 gsap.to(img, {
                     yPercent: 15,
                     ease: "none",
                     scrollTrigger: {
-                        trigger: card,
+                        trigger: element,
                         start: "top bottom",
                         end: "bottom top",
                         scrub: true

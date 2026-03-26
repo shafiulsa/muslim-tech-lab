@@ -4,7 +4,6 @@ import React, { useRef, useEffect, useMemo } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePreloadImages } from "@/hooks/usePreloadImages";
-import SHeroWords from "./SHeroWords";
 import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
