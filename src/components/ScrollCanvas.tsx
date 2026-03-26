@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePreloadImages } from "@/hooks/usePreloadImages";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,10 +186,12 @@ export default function ScrollCanvas() {
                     >
                         {/* <SHeroWords /> */}
                     </span>
-                    <img
+                    <Image
                         src={"/Whisk_46e1bfe69b70423b86b49c2895c8f7cfeg.png"}
                         className="w-32 md:w-48 h-auto mb-8 opacity-80"
                         alt="Logo"
+                        width={192}
+                        height={192}
                     />
                     {/* <span
                         className="text-[#666666] mt-6 text-xs md:text-sm tracking-[0.3em] uppercase font-sans"

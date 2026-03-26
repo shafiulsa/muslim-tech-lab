@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const TESTIMONIALS = [
@@ -78,9 +79,11 @@ export default function PremiumTestimonials() {
                             className="inline-block w-[350px] md:w-[450px] p-8 md:p-12 bg-[#faf9f6] rounded-3xl border border-[var(--accent-gold)]/10 shadow-[0_15px_35px_rgba(0,0,0,0.03)] group/card transition-all duration-500 hover:border-[var(--accent-gold)]/30 hover:-translate-y-2"
                         >
                             <div className="flex items-center gap-4 mb-8">
-                                <img
+                                <Image
                                     src={item.avatar}
                                     alt={item.name}
+                                    width={56}
+                                    height={56}
                                     className="w-14 h-14 rounded-full border border-[var(--accent-gold)]/20 shadow-sm"
                                 />
                                 <div>

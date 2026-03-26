@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -118,10 +119,11 @@ export default function PremiumPortfolio() {
                         >
                             {/* Card Body */}
                             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-[var(--background)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-transform duration-700 ease-out group-hover:scale-[1.02]">
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.title}
-                                    className="absolute inset-0 w-full h-[120%] object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100"
+                                    fill
+                                    className="object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100"
                                 />
 
                                 {/* Overlay Content */}
