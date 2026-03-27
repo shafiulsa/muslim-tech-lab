@@ -88,17 +88,17 @@ export default function BentoGallery() {
             <div className="gallery-wrap">
                 <div ref={galleryRef} className="gallery gallery--bento gallery--switch">
                     {/* Items 1 & 2 */}
-<div className="gallery__item"><Image src={STATIC_IMAGES[0]} alt="" fill className="object-cover" /></div>
-                    <div className="gallery__item"><Image src={STATIC_IMAGES[1]} alt="" fill className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[0]} alt="" fill sizes="25vw" className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[1]} alt="" fill sizes="25vw" className="object-cover" /></div>
 
                     {/* CENTRAL AUTO SLIDER (Item 3) */}
                     <div className="gallery__item slider-focus">
                         {SLIDER_DATA.map((item, idx) => (
-                            <div 
+                            <div
                                 key={idx}
                                 className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'}`}
                             >
-                                <Image src={item.src} alt={item.title} fill className="object-cover" />
+                                <Image src={item.src} alt={item.title} fill sizes="50vw" className="object-cover" />
                                 <div className="absolute bottom-8 left-8 text-white z-10">
                                     <h3 className="text-2xl font-serif italic tracking-wide">{item.title}</h3>
                                 </div>
@@ -112,11 +112,11 @@ export default function BentoGallery() {
                     </div>
 
                     {/* Remaining Items */}
-                    <div className="gallery__item"><Image src={STATIC_IMAGES[2]} alt="" fill className="object-cover" /></div>
-                    <div className="gallery__item"><Image src={STATIC_IMAGES[3]} alt="" fill className="object-cover" /></div>
-                    <div className="gallery__item"><Image src={STATIC_IMAGES[4]} alt="" fill className="object-cover" /></div>
-                    <div className="gallery__item"><Image src={STATIC_IMAGES[5]} alt="" fill className="object-cover" /></div>
-                    <div className="gallery__item"><Image src={STATIC_IMAGES[6]} alt="" fill className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[2]} alt="" fill sizes="25vw" className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[3]} alt="" fill sizes="25vw" className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[4]} alt="" fill sizes="25vw" className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[5]} alt="" fill sizes="25vw" className="object-cover" /></div>
+                    <div className="gallery__item"><Image src={STATIC_IMAGES[6]} alt="" fill sizes="25vw" className="object-cover" /></div>
                 </div>
             </div>
 

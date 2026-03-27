@@ -64,58 +64,7 @@ export default function Navbar() {
             className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${scrolled ? 'py-4 bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--foreground)]/5' : 'py-8 bg-transparent'
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                {/* Logo */}
-                <a
-                    href="#"
-                    className="group flex items-center gap-3"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                >
-                    <div className="relative w-10 h-10 flex items-center justify-center">
-                        <div className="absolute inset-0 border border-[#d4af37]/40 rotate-45 group-hover:rotate-90 transition-transform duration-700" />
-                        <span className="text-[#d4af37] font-serif text-xl font-bold">M</span>
-                    </div>
-                    <span className="text-[var(--foreground)] font-medium tracking-[0.2em] uppercase text-sm hidden sm:block">
-                        Muslim Tech Lab
-                    </span>
-                </a>
-
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    {NAV_LINKS.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => scrollToSection(e, link.href)}
-                            className="text-[var(--foreground)]/60 hover:text-[#d4af37] text-[10px] tracking-[0.3em] uppercase transition-colors duration-300 font-medium"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                    <a
-                        href="#contact"
-                        onClick={(e) => scrollToSection(e, '#contact')}
-                        className="px-6 py-2 border border-[#d4af37]/30 hover:border-[#d4af37] text-[#d4af37] text-[10px] tracking-[0.3em] uppercase transition-all duration-300 hover:bg-[#d4af37]/5"
-                    >
-                        Start Project
-                    </a>
-                </div>
-
-                {/* Mobile Menu Toggle */}
-                <button
-                    className="md:hidden text-[var(--foreground)] p-2"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    <div className="w-6 h-5 flex flex-col justify-between">
-                        <span className={`w-full h-[1px] bg-[#d4af37] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                        <span className={`w-full h-[1px] bg-[#d4af37] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-                        <span className={`w-full h-[1px] bg-[#d4af37] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-                    </div>
-                </button>
-            </div>
+       
 
             {/* Mobile Menu Overlay */}
             <AnimatePresence>

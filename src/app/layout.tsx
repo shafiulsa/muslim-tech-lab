@@ -31,11 +31,12 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
+        suppressHydrationWarning
       >
         <NoiseOverlay />
         <CustomCursor />
-        <PageCurtain />
-        <Navbar />
+        {/* <PageCurtain /> */}
+        {/* <Navbar /> */}
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

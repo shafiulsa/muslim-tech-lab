@@ -33,7 +33,7 @@ const POINTS = [
 
 export default function PremiumWhyChooseUs() {
     return (
-        <section className="relative min-h-screen flex items-center py-32 px-6 md:px-20 bg-white overflow-hidden">
+        <section className="relative min-h-screen flex items-center py-32 px-6 md:px-20 bg-[#faf9f6] overflow-hidden">
             {/* Background Accents */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">

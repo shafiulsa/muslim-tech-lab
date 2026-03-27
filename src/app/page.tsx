@@ -5,6 +5,8 @@ import PremiumWhyChooseUs from "@/components/premium/PremiumWhyChooseUs";
 import PremiumPortfolio from "@/components/premium/PremiumPortfolio";
 import PremiumTestimonials from "@/components/premium/PremiumTestimonials";
 import PremiumInteractive from "@/components/premium/PremiumInteractive";
+import PremiumFAQ from "@/components/premium/PremiumFAQ";
+import PremiumContact from "@/components/premium/PremiumContact";
 import PremiumCTA from "@/components/premium/PremiumCTA";
 import PremiumFooter from "@/components/premium/PremiumFooter";
 
@@ -23,6 +25,8 @@ export default function Home() {
       <PremiumPortfolio />
       <PremiumTestimonials />
       <PremiumInteractive />
+      <PremiumFAQ />
+      <PremiumContact />
       <PremiumCTA />
       <PremiumFooter />
     </main>

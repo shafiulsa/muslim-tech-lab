@@ -186,20 +186,22 @@ export default function ScrollCanvas() {
                     >
                         {/* <SHeroWords /> */}
                     </span>
-                    <Image
+                    {/* <Image
                         src={"/Whisk_46e1bfe69b70423b86b49c2895c8f7cfeg.png"}
-                        className="w-32 md:w-48 h-auto mb-8 opacity-80"
+                        className="w-32 md:w-48 mb-8 opacity-80"
                         alt="Logo"
                         width={192}
                         height={192}
-                    />
+                        style={{ height: "auto" }}
+                        priority
+                    /> */}
                     {/* <span
                         className="text-[#666666] mt-6 text-xs md:text-sm tracking-[0.3em] uppercase font-sans"
                         style={{ fontFamily: '"Inter", sans-serif' }}
                     >
                         Initializing Command Center
                     </span> */}
-                    <motion.span
+                    {/* <motion.span
                         className="mt-6 text-xl md:text-2xl tracking-[0.3em] uppercase font-sans font-bold flex flex-col items-center"
                         style={{
                             fontFamily: '"Inter", sans-serif',
@@ -218,14 +220,67 @@ export default function ScrollCanvas() {
                             ease: "easeInOut"
                         }}
                     >
-                        {/* <t> اَلسَّلَامُ عَلَيْكُمْ</t> */}
-                        <span dir="rtl" className="block mb-2">اَلسَّلَامُ عَلَيْكُمْ</span>
-                        <span className="text-sm md:text-base">As-salamu alaykum</span>
+                     
+                        
+                        <span className="text-lg md:text-base">As-salamu alaykum</span>
 
-                    </motion.span>
+                    </motion.span> */}
+
+                    <motion.div
+                        className="flex flex-col items-center justify-center space-y-4"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                    >
+                        {/* Arabic Script: Large and Elegant */}
+                        <span
+                            className="text-6xl md:text-9xl font-serif mb-2"
+                            style={{
+                                background: 'linear-gradient(to bottom, #D4AF37 0%, #F5E1A4 50%, #B8860B 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                filter: 'drop-shadow(0px 4px 10px rgba(0,0,0,0.1))',
+                                fontFamily: '"Playfair Display", serif' // Or a dedicated Arabic font if you have one loaded
+                            }}
+                        >
+                            Muslim Tech Lab
+                        </span>
+
+                        {/* Latin Subtext: Clean and Spaced */}
+                        <motion.span
+                            className="text-sm md:text-lg tracking-[0.5em] uppercase font-sans font-bold"
+                            style={{
+                                color: '#A16207', // Deep bronze/gold for legibility
+                                fontFamily: '"Inter", sans-serif',
+                            }}
+                            animate={{
+                                opacity: [0.4, 1, 0.4],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            As-salamu alaykum
+                        </motion.span>
+
+                        {/* Loading Percentage: Subtle and Modern */}
+                        <div className="mt-12 flex flex-col items-center">
+                            <div className="w-48 h-[1px] bg-[#A16207]/20 relative overflow-hidden">
+                                <motion.div
+                                    className="absolute inset-0 bg-[#A16207]"
+                                    style={{ width: `${loadedRatio * 100}%` }}
+                                />
+                            </div>
+                            <span className="text-[10px] uppercase tracking-widest mt-4 text-[#A16207]/60">
+                                System Initialize — {Math.round(loadedRatio * 100)}%
+                            </span>
+                        </div>
+                    </motion.div>
+                    {/* <br />
                     <br />
-                    <br />
-                    loading...  {Math.round(loadedRatio * 100)}
+                    loading...  {Math.round(loadedRatio * 100)} */}
 
                 </div>
             </div>
