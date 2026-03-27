@@ -105,19 +105,19 @@ export default function PremiumServices() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative min-h-screen py-32 px-6 md:px-20 overflow-hidden bg-[#fbf9f4]">
+        <section id="services" ref={containerRef} className="relative min-h-screen py-32 px-6 md:px-20 overflow-hidden bg-[#fbf9f4]">
             {/* PARALLAX BACKGROUND with INCREASED TRANSPARENCY */}
             <div ref={bgRef} className="absolute inset-0 z-0 pointer-events-none scale-105">
-                <div 
+                <div
                     className="absolute inset-0"
                     style={{ backgroundImage: `url(${MAP_BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 />
-                
+
                 {/* FIX: Changed from /80 (80% opaque) to /55 (55% opaque).
                     This makes the map much more visible.
                 */}
                 <div className="absolute inset-0 bg-[#fbf9f4]/75 backdrop-blur-[1px]" />
-                
+
                 {/* Gradient Accents */}
                 <div className="absolute top-[-10%] right-[-5%] w-[55%] h-[55%] bg-[radial-gradient(circle,rgba(251,191,36,0.15)_0%,transparent_75%)] blur-[120px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[55%] h-[55%] bg-[radial-gradient(circle,rgba(161,98,7,0.08)_0%,transparent_75%)] blur-[120px]" />

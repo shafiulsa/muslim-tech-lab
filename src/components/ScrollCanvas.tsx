@@ -112,6 +112,16 @@ export default function ScrollCanvas() {
     };
 
     useEffect(() => {
+        if (isComplete) {
+            const timer = setTimeout(() => {
+                window.dispatchEvent(new Event("show-navbar"));
+            }, 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [isComplete]);
+
+    // After preloading is done, set up GSAP
+    useEffect(() => {
         if (!isComplete || images.length === 0) return;
 
         renderCanvas(images, 0);
@@ -186,45 +196,6 @@ export default function ScrollCanvas() {
                     >
                         {/* <SHeroWords /> */}
                     </span>
-                    {/* <Image
-                        src={"/Whisk_46e1bfe69b70423b86b49c2895c8f7cfeg.png"}
-                        className="w-32 md:w-48 mb-8 opacity-80"
-                        alt="Logo"
-                        width={192}
-                        height={192}
-                        style={{ height: "auto" }}
-                        priority
-                    /> */}
-                    {/* <span
-                        className="text-[#666666] mt-6 text-xs md:text-sm tracking-[0.3em] uppercase font-sans"
-                        style={{ fontFamily: '"Inter", sans-serif' }}
-                    >
-                        Initializing Command Center
-                    </span> */}
-                    {/* <motion.span
-                        className="mt-6 text-xl md:text-2xl tracking-[0.3em] uppercase font-sans font-bold flex flex-col items-center"
-                        style={{
-                            fontFamily: '"Inter", sans-serif',
-                            background: 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            display: 'inline-block' // Required for transform animations
-                        }}
-                        animate={{
-                            scale: [1, 1.1, 1], // Zoom in to 110% and back to 100%
-                            opacity: [0.8, 1, 0.8] // Optional: subtle glow pulse
-                        }}
-                        transition={{
-                            duration: 3, // Seconds for one full loop
-                            repeat: Infinity, // Loop forever
-                            ease: "easeInOut"
-                        }}
-                    >
-                     
-                        
-                        <span className="text-lg md:text-base">As-salamu alaykum</span>
-
-                    </motion.span> */}
 
                     <motion.div
                         className="flex flex-col items-center justify-center space-y-4"

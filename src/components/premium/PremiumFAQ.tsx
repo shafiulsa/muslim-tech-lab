@@ -186,14 +186,14 @@ export default function PremiumFAQ() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative py-32 overflow-hidden bg-[#fbf9f4]">
+        <section id="faq" ref={containerRef} className="relative py-32 overflow-hidden bg-[#fbf9f4]">
             {/* PARALLAX BACKGROUND - EXACT MATCH TO FIRST SECTION */}
             <div ref={bgRef} className="absolute inset-0 z-0 pointer-events-none scale-105">
                 <div
                     className="absolute inset-0"
                     style={{ backgroundImage: `url(${MAP_BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 />
-                
+
                 {/* Overlay match: 75% opacity and backdrop blur */}
                 <div className="absolute inset-0 bg-[#fbf9f4]/75 backdrop-blur-[1px]" />
 

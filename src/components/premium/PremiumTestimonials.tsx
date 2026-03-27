@@ -95,7 +95,7 @@ export default function PremiumTestimonials() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative py-32 overflow-hidden bg-[#faf9f6]">
+        <section id="testimonials" ref={containerRef} className="relative py-32 overflow-hidden bg-[#faf9f6]">
 
             {/* COMPOSITE BACKGROUND WRAPPER */}
             <div ref={bgRef} className="absolute inset-0 z-0 pointer-events-none scale-105">

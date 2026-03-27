@@ -328,17 +328,17 @@ export default function PremiumPortfolio() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative min-h-screen py-32 px-6 md:px-20 bg-[#fbf9f4] overflow-hidden">
-            
+        <section id="portfolio" ref={sectionRef} className="relative min-h-screen py-32 px-6 md:px-20 bg-[#fbf9f4] overflow-hidden">
+
             {/* --- REPLICATED BACKGROUND SYSTEM --- */}
             <div ref={bgRef} className="absolute inset-0 z-0 pointer-events-none scale-105">
-                <div 
+                <div
                     className="absolute inset-0"
                     style={{ backgroundImage: `url(${MAP_BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 />
                 {/* 75% Opacity Overlay */}
                 <div className="absolute inset-0 bg-[#fbf9f4]/75 backdrop-blur-[1px]" />
-                
+
                 {/* Ambient Glows */}
                 <div className="absolute top-[-10%] right-[-5%] w-[55%] h-[55%] bg-[radial-gradient(circle,rgba(251,191,36,0.15)_0%,transparent_75%)] blur-[120px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[55%] h-[55%] bg-[radial-gradient(circle,rgba(161,98,7,0.08)_0%,transparent_75%)] blur-[120px]" />

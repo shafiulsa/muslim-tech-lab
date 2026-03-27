@@ -39,6 +39,7 @@ export default function PremiumInteractive() {
 
     return (
         <section
+            id="process"
             ref={sectionRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
