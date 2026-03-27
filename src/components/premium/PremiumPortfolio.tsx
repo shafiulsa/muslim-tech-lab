@@ -13,25 +13,25 @@ const PROJECTS = [
         title: "Digital Oasis",
         category: "Web Experience",
         result: "+140% Conversion Rate",
-        image: "https://assets.codepen.io/16327/portrait-image-12.jpg",
+        image: "/project/project-1.png",
     },
     {
         title: "Noor Systems",
         category: "Custom Software",
         result: "Automated 80% Workflows",
-        image: "https://assets.codepen.io/16327/portrait-image-8.jpg",
+        image: "/project/project-2.png",
     },
     {
         title: "Medina Marketing",
         category: "Email Strategy",
         result: "3x Open Rate Growth",
-        image: "https://assets.codepen.io/16327/portrait-image-4.jpg",
+        image: "/project/project-3.png",
     },
     {
         title: "Qibla Connect",
         category: "Mobile Application",
         result: "500k+ Active Users",
-        image: "https://assets.codepen.io/16327/portrait-image-3.jpg",
+        image: "/project/project-4.png",
     },
 ];
 
