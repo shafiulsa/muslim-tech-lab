@@ -1,75 +1,231 @@
+// "use client";
+
+// import React from "react";
+// import { motion } from "framer-motion";
+
+// const POINTS = [
+//     {
+//         title: "Halal-first approach",
+//         description: "Ethical engineering that respects your values and maintains the highest standards of integrity.",
+//         icon: "🕌",
+//     },
+//     {
+//         title: "Arab market focused",
+//         description: "Deep understanding of cultural nuances and consumer behavior in the MENA region.",
+//         icon: "🌍",
+//     },
+//     {
+//         title: "Automation-driven systems",
+//         description: "Smarter workflows that save time and resources, allowing you to focus on what matters most.",
+//         icon: "🚀",
+//     },
+//     {
+//         title: "Transparent workflow",
+//         description: "Clear communication and real-time updates through every phase of the project.",
+//         icon: "💎",
+//     },
+//     {
+//         title: "ROI-focused results",
+//         description: "Data-backed strategies designed to maximize your digital growth and performance.",
+//         icon: "📈",
+//     },
+// ];
+
+// export default function PremiumWhyChooseUs() {
+//     return (
+//         <section className="relative min-h-screen flex items-center py-32 px-6 md:px-20 bg-[#faf9f6] overflow-hidden">
+//             {/* Background Accents */}
+//             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
+//                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+//                     <path
+//                         d="M0,50 Q25,45 50,50 T100,50"
+//                         fill="none"
+//                         stroke="var(--accent-gold)"
+//                         strokeWidth="0.1"
+//                         className="opacity-30"
+//                     />
+//                 </svg>
+//             </div>
+
+//             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+//                 {/* Left: Content */}
+//                 <div>
+//                     <motion.span
+//                         initial={{ opacity: 0, x: -20 }}
+//                         whileInView={{ opacity: 1, x: 0 }}
+//                         viewport={{ once: true }}
+//                         className="text-[var(--accent-gold)] uppercase tracking-widest text-sm font-bold mb-4 block"
+//                     >
+//                         Why Partner With Us?
+//                     </motion.span>
+//                     <motion.h2
+//                         initial={{ opacity: 0, y: 30 }}
+//                         whileInView={{ opacity: 1, y: 0 }}
+//                         viewport={{ once: true }}
+//                         transition={{ duration: 0.8 }}
+//                         className="text-4xl md:text-6xl font-serif text-[var(--foreground)] mb-12"
+//                         style={{ fontFamily: 'var(--font-playfair)' }}
+//                     >
+//                         Architecting the Future of the <span className="text-[var(--accent-gold)]">Muslim Digital Market</span>
+//                     </motion.h2>
+
+//                     <div className="space-y-8">
+//                         {POINTS.map((point, index) => (
+//                             <motion.div
+//                                 key={index}
+//                                 initial={{ opacity: 0, x: -30 }}
+//                                 whileInView={{ opacity: 1, x: 0 }}
+//                                 viewport={{ once: true }}
+//                                 transition={{ duration: 0.6, delay: index * 0.1 }}
+//                                 className="flex gap-6 group"
+//                             >
+//                                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--accent-gold)]/5 flex items-center justify-center text-2xl group-hover:bg-[var(--accent-gold)] group-hover:text-white transition-all duration-300">
+//                                     {point.icon}
+//                                 </div>
+//                                 <div>
+//                                     <h3 className="text-xl font-serif text-[var(--foreground)] mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
+//                                         {point.title}
+//                                     </h3>
+//                                     <p className="text-[var(--foreground)]/60 font-sans leading-relaxed">
+//                                         {point.description}
+//                                     </p>
+//                                 </div>
+//                             </motion.div>
+//                         ))}
+//                     </div>
+//                 </div>
+
+//                 {/* Right: Visual Section */}
+//                 <div className="relative aspect-square lg:aspect-auto h-full min-h-[500px] flex items-center justify-center">
+//                     <motion.div
+//                         initial={{ opacity: 0, scale: 0.8 }}
+//                         whileInView={{ opacity: 1, scale: 1 }}
+//                         viewport={{ once: true }}
+//                         transition={{ duration: 1.2, ease: "circOut" }}
+//                         className="relative w-full max-w-md h-full max-h-md"
+//                     >
+//                         {/* Abstract Geometry / Illustration */}
+//                         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(179,135,40,0.1)_0%,transparent_70%)] rounded-full animate-pulse" />
+
+//                         {/* Floating elements representing points */}
+//                         <motion.div
+//                             animate={{ y: [0, -20, 0] }}
+//                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+//                             className="absolute top-[10%] left-[10%] p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-[var(--accent-gold)]/10 z-20"
+//                         >
+//                             <span className="text-3xl">🕌</span>
+//                         </motion.div>
+
+//                         <motion.div
+//                             animate={{ y: [0, 20, 0] }}
+//                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+//                             className="absolute bottom-[20%] right-[10%] p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-[var(--accent-gold)]/10 z-20"
+//                         >
+//                             <span className="text-3xl">🌍</span>
+//                         </motion.div>
+
+//                         <motion.div
+//                             animate={{ x: [0, 15, 0] }}
+//                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+//                             className="absolute top-[40%] right-[5%] p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-[var(--accent-gold)]/10 z-20"
+//                         >
+//                             <span className="text-3xl">🚀</span>
+//                         </motion.div>
+
+//                         {/* Central Ornament */}
+//                         <div className="absolute inset-0 flex items-center justify-center">
+//                             <div className="w-64 h-64 border border-[var(--accent-gold)]/20 rounded-full flex items-center justify-center">
+//                                 <div className="w-48 h-48 border border-[var(--accent-gold)]/40 rounded-full flex items-center justify-center rotate-45">
+//                                     <div className="w-32 h-32 bg-[var(--accent-gold)]/10 rounded-full flex items-center justify-center">
+//                                         <div className="w-16 h-16 bg-[var(--accent-gold)] rounded-full opacity-20" />
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </motion.div>
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// }
+
+
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
+// Using Lucide for a clean, technical aesthetic
+import { 
+    ShieldCheck, 
+    Globe, 
+    Zap, 
+    Layers, 
+    BarChart3, 
+    Cpu, 
+    Network, 
+    Orbit 
+} from "lucide-react";
 
 const POINTS = [
     {
         title: "Halal-first approach",
         description: "Ethical engineering that respects your values and maintains the highest standards of integrity.",
-        icon: "🕌",
+        icon: <ShieldCheck className="w-6 h-6" />,
     },
     {
         title: "Arab market focused",
         description: "Deep understanding of cultural nuances and consumer behavior in the MENA region.",
-        icon: "🌍",
+        icon: <Globe className="w-6 h-6" />,
     },
     {
         title: "Automation-driven systems",
         description: "Smarter workflows that save time and resources, allowing you to focus on what matters most.",
-        icon: "🚀",
+        icon: <Zap className="w-6 h-6" />,
     },
     {
         title: "Transparent workflow",
         description: "Clear communication and real-time updates through every phase of the project.",
-        icon: "💎",
+        icon: <Layers className="w-6 h-6" />,
     },
     {
         title: "ROI-focused results",
         description: "Data-backed strategies designed to maximize your digital growth and performance.",
-        icon: "📈",
+        icon: <BarChart3 className="w-6 h-6" />,
     },
 ];
 
 export default function PremiumWhyChooseUs() {
+    const ACCENT_COLOR = "#a16207"; // Matching your portfolio gold
+
     return (
-        <section className="relative min-h-screen flex items-center py-32 px-6 md:px-20 bg-[#faf9f6] overflow-hidden">
-            {/* Background Accents */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
-                <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path
-                        d="M0,50 Q25,45 50,50 T100,50"
-                        fill="none"
-                        stroke="var(--accent-gold)"
-                        strokeWidth="0.1"
-                        className="opacity-30"
-                    />
-                </svg>
-            </div>
+        <section className="relative min-h-screen flex items-center py-32 px-6 md:px-20 bg-[#fbf9f4] overflow-hidden">
+            {/* Background Technical Grid Overlay */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                 style={{ backgroundImage: `radial-gradient(${ACCENT_COLOR} 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+                
                 {/* Left: Content */}
                 <div>
                     <motion.span
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-[var(--accent-gold)] uppercase tracking-widest text-sm font-bold mb-4 block"
+                        className="text-[#a16207] uppercase tracking-[0.3em] text-xs font-bold mb-4 block"
                     >
-                        Why Partner With Us?
+                        Strategic Partnership
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-6xl font-serif text-[var(--foreground)] mb-12"
-                        style={{ fontFamily: 'var(--font-playfair)' }}
+                        className="text-4xl md:text-6xl font-serif text-[#1c1917] mb-12 leading-[1.1]"
                     >
-                        Architecting the Future of the <span className="text-[var(--accent-gold)]">Muslim Digital Market</span>
+                        Architecting the Future of the <span className="text-[#a16207] italic">Muslim Digital Market</span>
                     </motion.h2>
 
-                    <div className="space-y-8">
+                    <div className="space-y-10">
                         {POINTS.map((point, index) => (
                             <motion.div
                                 key={index}
@@ -79,14 +235,14 @@ export default function PremiumWhyChooseUs() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="flex gap-6 group"
                             >
-                                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--accent-gold)]/5 flex items-center justify-center text-2xl group-hover:bg-[var(--accent-gold)] group-hover:text-white transition-all duration-300">
+                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#a16207]/5 flex items-center justify-center text-[#a16207] border border-[#a16207]/10 group-hover:bg-[#a16207] group-hover:text-white transition-all duration-500 ease-expo">
                                     {point.icon}
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-serif text-[var(--foreground)] mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
+                                    <h3 className="text-xl font-serif text-[#1c1917] mb-2 font-medium">
                                         {point.title}
                                     </h3>
-                                    <p className="text-[var(--foreground)]/60 font-sans leading-relaxed">
+                                    <p className="text-[#1c1917]/60 font-sans leading-relaxed text-sm md:text-base max-w-md">
                                         {point.description}
                                     </p>
                                 </div>
@@ -95,56 +251,93 @@ export default function PremiumWhyChooseUs() {
                     </div>
                 </div>
 
-                {/* Right: Visual Section */}
-                <div className="relative aspect-square lg:aspect-auto h-full min-h-[500px] flex items-center justify-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: "circOut" }}
-                        className="relative w-full max-w-md h-full max-h-md"
+                {/* Right: Technical Constellation Visual */}
+                <div className="relative h-[600px] flex items-center justify-center">
+                    
+                    {/* Central Core */}
+                    <motion.div 
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="absolute w-[400px] h-[400px] border border-[#a16207]/10 rounded-full flex items-center justify-center"
                     >
-                        {/* Abstract Geometry / Illustration */}
-                        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(179,135,40,0.1)_0%,transparent_70%)] rounded-full animate-pulse" />
+                        <div className="w-[300px] h-[300px] border border-[#a16207]/20 border-dashed rounded-full" />
+                    </motion.div>
 
-                        {/* Floating elements representing points */}
-                        <motion.div
-                            animate={{ y: [0, -20, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-[10%] left-[10%] p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-[var(--accent-gold)]/10 z-20"
-                        >
-                            <span className="text-3xl">🕌</span>
-                        </motion.div>
+                    {/* Floating Tech Nodes */}
+                    <div className="relative w-full h-full">
+                        
+                        {/* Node 1: AI/Logic */}
+                        <TechNode 
+                            delay={0} 
+                            x="20%" y="15%" 
+                            icon={<Cpu className="w-8 h-8" />} 
+                            label="Neural Core"
+                        />
 
-                        <motion.div
-                            animate={{ y: [0, 20, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-[20%] right-[10%] p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-[var(--accent-gold)]/10 z-20"
-                        >
-                            <span className="text-3xl">🌍</span>
-                        </motion.div>
+                        {/* Node 2: Network/Global */}
+                        <TechNode 
+                            delay={1.5} 
+                            x="75%" y="25%" 
+                            icon={<Network className="w-8 h-8" />} 
+                            label="Global Mesh"
+                        />
 
-                        <motion.div
-                            animate={{ x: [0, 15, 0] }}
-                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                            className="absolute top-[40%] right-[5%] p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-[var(--accent-gold)]/10 z-20"
-                        >
-                            <span className="text-3xl">🚀</span>
-                        </motion.div>
+                        {/* Node 3: Growth */}
+                        <TechNode 
+                            delay={0.8} 
+                            x="65%" y="70%" 
+                            icon={<Orbit className="w-8 h-8" />} 
+                            label="Scalability"
+                        />
 
-                        {/* Central Ornament */}
+                        {/* Node 4: Security */}
+                        <TechNode 
+                            delay={2.2} 
+                            x="15%" y="75%" 
+                            icon={<ShieldCheck className="w-8 h-8" />} 
+                            label="Protocol"
+                        />
+
+                        {/* Center Brand Pulse */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-64 h-64 border border-[var(--accent-gold)]/20 rounded-full flex items-center justify-center">
-                                <div className="w-48 h-48 border border-[var(--accent-gold)]/40 rounded-full flex items-center justify-center rotate-45">
-                                    <div className="w-32 h-32 bg-[var(--accent-gold)]/10 rounded-full flex items-center justify-center">
-                                        <div className="w-16 h-16 bg-[var(--accent-gold)] rounded-full opacity-20" />
-                                    </div>
-                                </div>
+                            <motion.div 
+                                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
+                                transition={{ duration: 4, repeat: Infinity }}
+                                className="w-32 h-32 bg-[#a16207]/20 rounded-full blur-3xl"
+                            />
+                            <div className="relative w-20 h-20 bg-white border border-[#a16207]/20 rounded-2xl shadow-2xl flex items-center justify-center z-30">
+                                <Zap className="w-10 h-10 text-[#a16207] fill-[#a16207]/10" />
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
+    );
+}
+
+// Sub-component for the Floating Tech Nodes
+function TechNode({ x, y, icon, label, delay }: { x: string, y: string, icon: React.ReactNode, label: string, delay: number }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            animate={{ y: [0, -15, 0] }}
+            transition={{ 
+                opacity: { duration: 1, delay },
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay } 
+            }}
+            style={{ left: x, top: y }}
+            className="absolute z-20"
+        >
+            <div className="bg-white/90 backdrop-blur-xl border border-[#a16207]/10 p-5 rounded-2xl shadow-[0_20px_50px_rgba(161,98,7,0.1)] flex flex-col items-center gap-3 group hover:border-[#a16207]/40 transition-colors duration-500">
+                <div className="text-[#a16207] group-hover:scale-110 transition-transform duration-500">
+                    {icon}
+                </div>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[#1c1917]/40 group-hover:text-[#a16207] transition-colors">
+                    {label}
+                </span>
+            </div>
+        </motion.div>
     );
 }

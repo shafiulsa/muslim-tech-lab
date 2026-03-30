@@ -272,13 +272,13 @@ export default function ScrollCanvas() {
                             style={{ willChange: "opacity, transform" }}
                         >
                             <h2
-                                className="text-[var(--foreground)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium mb-4 md:mb-6 drop-shadow-2xl px-4"
+                                className="text-[var(--accent-gold2)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium mb-4 md:mb-6 drop-shadow-2xl px-4"
                                 style={{ fontFamily: '"Playfair Display", serif' }}
                             >
                                 {narrative.title}
                             </h2>
                             <p
-                                className="text-[#a0a0a0] text-[10px] md:text-sm lg:text-base tracking-[0.2em] uppercase px-4"
+                                className="text-[#ffd700] text-[16px] md:text-sm lg:text-base tracking-[0.2em] uppercase px-4"
                                 style={{ fontFamily: '"Inter", sans-serif' }}
                             >
                                 {narrative.sub}

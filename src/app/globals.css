@@ -9,6 +9,7 @@ html {
   --background: #d6d1ca; /* Warm earthly beige */
   --foreground: #1a1a1a; /* Soft obsidian black */
   --accent-gold: #b38728;
+  --accent-gold2: #FFAA00;
 }
 
 @theme inline {
@@ -16,6 +17,8 @@ html {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-gold2: var(--accent-gold2);
 }
 
 
