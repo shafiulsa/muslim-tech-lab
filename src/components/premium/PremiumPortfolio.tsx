@@ -981,7 +981,7 @@
 
 //             // GURANTEE FIRST CARD IS CENTERED ON LOAD
 //             scrollToOffset(spacing * 0); 
-            
+
 //         }, sectionRef);
 
 //         return () => ctx.revert();
@@ -1044,7 +1044,7 @@
 //                                 priority={i < 2}
 //                                 className="object-cover opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-1000"
 //                             />
-                            
+
 //                             {/* Meta Info Overlay */}
 //                             <div className="absolute inset-0 p-10 flex flex-col justify-between border-[1px] border-[#a16207]/30 rounded-[2rem] m-3">
 //                                 <div className="flex justify-between items-start">
@@ -1071,7 +1071,7 @@
 //             </div>
 
 //             <div ref={proxyRef} className="invisible absolute h-10 w-10" />
-            
+
 //             <div className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-30 flex flex-col items-center gap-3">
 //                 <span className="text-[9px] uppercase tracking-[0.8em]">Orbit to Explore</span>
 //                 <div className="w-[1px] h-12 bg-gradient-to-b from-[#1c1917] to-transparent" />
@@ -1113,10 +1113,8 @@ export default function AwwwardsPortfolio() {
 
         const ctx = gsap.context(() => {
             const cards = gsap.utils.toArray(".cards li");
-            const spacing = 0.2; 
+            const spacing = 0.2;
             const snapTime = gsap.utils.snap(spacing);
-            let iteration = 0;
-
             gsap.set(cards, { xPercent: 300, opacity: 0, scale: 0.6 });
 
             const animateFunc = (element: any) => {
@@ -1125,8 +1123,8 @@ export default function AwwwardsPortfolio() {
                     { scale: 0.6, opacity: 0.2 },
                     { scale: 1, opacity: 1, zIndex: 100, duration: 0.5, yoyo: true, repeat: 1, ease: "power2.inOut", immediateRender: false }
                 ).fromTo(element,
-                    { xPercent: 220 }, 
-                    { xPercent: -220, duration: 1, ease: "none", immediateRender: false }, 0 
+                    { xPercent: 220 },
+                    { xPercent: -220, duration: 1, ease: "none", immediateRender: false }, 0
                 );
                 return tl;
             };
@@ -1149,29 +1147,16 @@ export default function AwwwardsPortfolio() {
                 end: "+=3500",
                 pin: true,
                 onUpdate(self) {
-                    let scroll = self.scroll();
-                    if (scroll > self.end - 1) {
-                        wrap(1, 2);
-                    } else if (scroll < 1 && self.direction < 0) {
-                        wrap(-1, self.end - 2);
-                    } else {
-                        scrub.vars.offset = (iteration + self.progress) * seamlessLoop.duration();
-                        scrub.invalidate().restart();
-                    }
+                    scrub.vars.offset = self.progress * seamlessLoop.duration();
+                    scrub.invalidate().restart();
                 }
             });
 
-            const wrap = (iterationDelta: number, scrollTo: number) => {
-                iteration += iterationDelta;
-                trigger.scroll(scrollTo);
-                trigger.update();
-            };
-
             function scrollToOffset(offset: number) {
                 let snappedTime = snapTime(offset);
-                let progress = (snappedTime - seamlessLoop.duration() * iteration) / seamlessLoop.duration();
-                let scroll = gsap.utils.clamp(1, trigger.end - 1, gsap.utils.wrap(0, 1, progress) * trigger.end);
-                if (progress >= 1 || progress < 0) return wrap(Math.floor(progress), scroll);
+                let progress = snappedTime / seamlessLoop.duration();
+                progress = gsap.utils.clamp(0, 1, progress);
+                let scroll = trigger.start + progress * (trigger.end - trigger.start);
                 trigger.scroll(scroll);
             }
 
@@ -1180,14 +1165,18 @@ export default function AwwwardsPortfolio() {
                 trigger: cardsRef.current,
                 onPress() { this.startOffset = scrub.vars.offset; },
                 onDrag() {
-                    scrub.vars.offset = this.startOffset + (this.startX - this.x) * 0.001;
+                    let newOffset = this.startOffset + (this.startX - this.x) * 0.001;
+                    newOffset = gsap.utils.clamp(0, seamlessLoop.duration(), newOffset);
+                    scrub.vars.offset = newOffset;
                     scrub.invalidate().restart();
                 },
                 onDragEnd() { scrollToOffset(scrub.vars.offset); }
             });
 
-            scrollToOffset(spacing * 0); 
-            
+            // Set initial position without triggering a window scroll jump
+            scrub.vars.offset = 0;
+            scrub.invalidate().restart();
+
         }, sectionRef);
 
         return () => ctx.revert();
@@ -1249,7 +1238,7 @@ export default function AwwwardsPortfolio() {
                                 priority={i < 2}
                                 className="object-cover opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-1000"
                             />
-                            
+
                             <div className="absolute inset-0 p-8 flex flex-col justify-between border-[1px] border-[#a16207]/30 rounded-[2rem] m-3">
                                 <div className="flex justify-between items-start">
                                     <span className="text-[#a16207] text-[9px] font-bold uppercase tracking-widest leading-none rotate-90 origin-left mt-6">PROJECT</span>
@@ -1275,7 +1264,7 @@ export default function AwwwardsPortfolio() {
             </div>
 
             <div ref={proxyRef} className="invisible absolute" />
-            
+
             {/* Scroll Hint */}
             <div className="relative pb-10 flex flex-col items-center gap-3 z-20">
                 <span className="text-[8px] uppercase tracking-[0.8em] opacity-40">Orbit to Explore</span>
