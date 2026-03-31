@@ -10,17 +10,10 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const FOLDERS = [
-    { path: "/tech", frames: 240 },
+    { path: "/tech", frames: 155 },
 ];
 
-// const NARRATIVES = [
-//     { range: [0, 0], title: "Architecture of Logic", sub: "Custom systems built for unshakeable stability." },
-//     { range: [0.16, 0.30], title: "Immersive Interfaces", sub: "High-performance storytelling through the web." },
-//     { range: [0.31, 0.45], title: "Infinite Efficiency", sub: "Intelligent workflows that reclaim your time." },
-//     { range: [0.46, 0.60], title: "Direct Connection", sub: "High-conversion strategies delivered with precision." },
-//     { range: [0.61, 0.80], title: "Digital Presence", sub: "Dominating the feed with premium aesthetic." },
-//     { range: [0.81, 1.0], title: "Ethical Growth", sub: "High-performance marketing, strictly Halal." },
-// ];
+
 const NARRATIVES = [
     {
         range: [0, 0.10],
@@ -91,7 +84,9 @@ export default function ScrollCanvas() {
 
         const safeIndex = Math.min(Math.max(0, Math.round(frameIdx)), imgList.length - 1);
         const img = imgList[safeIndex];
-        if (!img) return;
+
+        // Skip drawing if the image failed to load or is broken (prevents flashing #d6d1ca)
+        if (!img || img.naturalWidth === 0) return;
 
         if (canvas.width !== window.innerWidth || canvas.height !== window.innerHeight) {
             canvas.width = window.innerWidth;
@@ -186,7 +181,7 @@ export default function ScrollCanvas() {
     return (
         <div ref={containerRef} className="relative w-full bg-[var(--background)]" style={{ height: "600vh" }}>
             <div
-                className={`fixed inset-0 z-50 flex items-center justify-center bg-[var(--background)] transition-opacity duration-1000 ${isComplete ? "opacity-0 pointer-events-none" : "opacity-100"
+                className={`fixed inset-0 z-50 flex items-center justify-center bg-[#d6d1ca] transition-opacity duration-1000 ${isComplete ? "opacity-0 pointer-events-none" : "opacity-100"
                     }`}
             >
                 <div className="flex flex-col items-center">
@@ -272,7 +267,7 @@ export default function ScrollCanvas() {
                             style={{ willChange: "opacity, transform" }}
                         >
                             <h2
-                                className="text-[var(--accent-gold2)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium mb-4 md:mb-6 drop-shadow-2xl px-4"
+                                className="text-[var(--white)] text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium mb-4 md:mb-6 drop-shadow-2xl px-4"
                                 style={{ fontFamily: '"Playfair Display", serif' }}
                             >
                                 {narrative.title}

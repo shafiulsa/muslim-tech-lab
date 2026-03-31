@@ -10,6 +10,8 @@ html {
   --foreground: #1a1a1a; /* Soft obsidian black */
   --accent-gold: #b38728;
   --accent-gold2: #FFAA00;
+  --white: #FFFFFF;
+  --white2: #F3E5AB;
 }
 
 @theme inline {

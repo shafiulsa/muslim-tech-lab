@@ -8,32 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// const TESTIMONIALS = [
-//     {
-//         name: "Ahmed Al-Maktoum",
-//         country: "UAE",
-//         feedback: "The level of precision and cultural alignment is unmatched. A true partner for Middle East brands.",
-//         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=AA&backgroundColor=B38728",
-//     },
-//     {
-//         name: "Sara Al-Saud",
-//         country: "Saudi Arabia",
-//         feedback: "They captured the soul of our mission. The scrollytelling experience is breathtaking.",
-//         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=SS&backgroundColor=B38728",
-//     },
-//     {
-//         name: "Omar Al-Kuwari",
-//         country: "Qatar",
-//         feedback: "Efficiency, transparency, and top-tier design. The gold standard agency.",
-//         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=OA&backgroundColor=B38728",
-//     },
-//     {
-//         name: "Fatima Hassan",
-//         country: "Kuwait",
-//         feedback: "Finally, an agency that translates our values into world-class digital products.",
-//         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=FH&backgroundColor=B38728",
-//     },
-// ];
 const TESTIMONIALS = [
     {
         name: "Ahmed Al-Maktoum",

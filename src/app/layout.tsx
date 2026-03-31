@@ -35,7 +35,6 @@ export default function RootLayout({
       >
         <NoiseOverlay />
         <CustomCursor />
-        {/* <PageCurtain /> */}
         <Navbar />
         <LenisProvider>{children}</LenisProvider>
       </body>
